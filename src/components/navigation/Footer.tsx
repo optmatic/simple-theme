@@ -1,4 +1,4 @@
-import Logo from '@/images/rheum-logo-clear.webp'
+import Logo from '@/images/very_good_bd.png'
 import { MapPin, PhoneCall, AtSign } from 'lucide-react'
 
 

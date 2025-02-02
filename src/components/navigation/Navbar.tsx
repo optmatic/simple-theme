@@ -6,11 +6,15 @@ import Link from 'next/link'
 import { navItems } from '@/config/navConfig'
 import { ChevronDownIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
-import Logo from '@/images/optmatic-logo.svg'
+import Logo from '@/images/very_good_bd.png'
 import { dropdownItems, mainMenuItems } from '@/types/navTypes'
 
 import { useState } from 'react'
 
+// Add the nav items array
+const navigationItems: mainMenuItems[] = [
+  // Your navigation items here
+]
 
 export default function PrimaryNav() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -74,7 +78,7 @@ export default function PrimaryNav() {
           </div>
           <div className="hidden md:flex md:flex-1 md:items-center">
             <div className="flex flex-1 justify-center space-x-2">
-              {mainMenuItem.map((item: mainMenuItems) => (
+              {navigationItems.map((item: mainMenuItems) => (
                 <div key={item.name} className="h-10 flex items-center">
                   {item.hasDropdown ? (
                     <div
@@ -167,8 +171,8 @@ export default function PrimaryNav() {
                 </div>
                 
                 <nav className="mt-12 space-y-2 px-4 xs:px-6 lg:px-4">
-                  {mainMenuItem.map((item: mainMenuItems) => (
-                    <div key={item.name} className="">
+                  {navigationItems.map((item: mainMenuItems) => (
+                    <div key={item.name}>
                       {item.hasDropdown && item.dropdownItems ? (
                         <div className="border-t border-white/10 mt-6 mb-2 pt-4">
                           <p className="text-white text-xl font-semibold mb-2">{item.name}</p>
