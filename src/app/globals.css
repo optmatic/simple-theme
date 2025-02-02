@@ -2,20 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Prevents horizontal scrolling on mobile */
+
+/* html, body {
+  overflow-x: hidden;
+} */
+
+
+/* List items */
+
+ul > li {
+  margin-bottom: 8px;
+  @apply leading-6;
+ }
+
+@media only screen and (max-width: 400px) {
+  /* Ensures full width on mobile */
+ body {
+    min-width: fit-content;
+  }
+
+  /* footer ul {
+    @apply !justify-start;
+  } */
+
+  #logo {
+    @apply w-[220px];
+  }
+
+  #mobileMenuBtn span {
+    @apply text-sm;
+  }
+  /* Scales down the mobile button */
+  #mobileCallBtn span {
+    @apply text-sm;
+  }
+  #mobileCallBtn svg {
+    @apply h-4 w-4;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.no-decoration {
+  list-style-type: none;
+}
+
+.feature-bg {
+  background-image: url(../images/feature-img-sans-felons.webp) ;
+  background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Merriweather, serif;
+}
+
+p, a, li {
+  font-family: GeistSans, sans-serif;
+}
+
+a {
+  @apply tracking-wide;
+}
+@media only screen and (min-width: 1022px) and (max-width:1279px) {
+  #small-hero-img {
+    display: none !important;
+  }
+  
+}
+.has-list li {
+  list-style-type: circle;
+}
+
+.contact-us label {
+ @apply font-sans font-semibold text-lg;
+}
+
+.contact-us input {
+  @apply font-sans;
+}
+
+.contact-us textarea {
+  @apply font-sans;
+}
+
+.contact-us #phone-optional {
+  @apply font-sans;
+}
+
+.contact-us #message-max {
+  @apply font-sans;
 }
